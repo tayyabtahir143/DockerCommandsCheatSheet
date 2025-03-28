@@ -8,6 +8,7 @@ A quick reference guide for Docker commands, optimized for developers and DevOps
 
 | Command | Description |
 |---------|-------------|
+| `docker init` | To initialize and generate Dockerfile, and docker-compose.yaml file |
 | `docker run -d --name <name> <image>` | Run a container in detached mode |
 | `docker start <container>` | Start a stopped container |
 | `docker stop <container>` | Stop a running container |
@@ -115,4 +116,4 @@ A quick reference guide for Docker commands, optimized for developers and DevOps
 
 **1. Run Nginx with port mapping:**
 ```bash
-docker run -d --name webserver -p 8080:80 nginx
+docker run -d --name webserver --restart always -v ./data:/usr/share/nginx/html -p 8080:80 -v  nginx
